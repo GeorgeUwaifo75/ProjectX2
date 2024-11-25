@@ -1,3 +1,4 @@
 streamlit
 langchain_huggingface
 python-dotenv
+transformers
