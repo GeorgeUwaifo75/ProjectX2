@@ -9,4 +9,4 @@ load_dotenv()
 #os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
 
 st.title("HuggingFace Project")
-st.write("HF:",HUGGINGFACEHUB_API_TOKEN)
+st.write("HF:",{HUGGINGFACEHUB_API_TOKEN})
