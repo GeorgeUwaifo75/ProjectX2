@@ -12,22 +12,22 @@ from langchain_huggingface import HuggingFaceEndpoint
 from dotenv import load_dotenv
 
 mycontext=""
+context = ""
 qa_pipeline = ""
-
-def setup1():
-    # Load the question-answering pipeline
-    qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
-    
-    # Define the context related to GeeksforGeeks
-    context = f"{mycontext}"
-
-
 
 json_url = 'https://api.npoint.io/03cc552f40aca75a2bf1'
 response = requests.get(json_url)
 json_data = response.content
 
 urls = []
+
+
+def setup1(mycontext):
+    # Load the question-answering pipeline
+    qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
+    
+    # Define the context related to GeeksforGeeks
+    context = f"{mycontext}"
 
 
 #Upload IvieAI dataset
@@ -44,7 +44,7 @@ def upload_ivieAi():
     return text
 
 def handle_userinput(text):
-    result = qa_pipeline(question=text, context=mycontext)
+    result = qa_pipeline(question=text, context=context)
     st.write(f"Q: {text}\nA: {result['answer']}\n")
 
 
@@ -54,7 +54,7 @@ def main():
 
     st.title("HuggingFace Project")
     mycontext = upload_ivieAi()
-    setup1()
+    setup1(mycontext)
 
     user_question = st.text_input("Ask a question about your documents:")
     # Ask a question
