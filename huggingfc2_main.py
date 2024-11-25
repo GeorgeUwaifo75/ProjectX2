@@ -10,7 +10,6 @@ from langchain_huggingface import HuggingFaceEndpoint
 from dotenv import load_dotenv
 
 mycontext=""
-HUGGINGFACEHUB_API_TOKEN= os.environ["HUGGINGFACEHUB_API_TOKEN"]
 
 
 json_url = 'https://api.npoint.io/03cc552f40aca75a2bf1'
@@ -35,6 +34,8 @@ def upload_ivieAi():
 
 def main():
     load_dotenv()
+    HUGGINGFACEHUB_API_TOKEN= os.environ["HUGGINGFACEHUB_API_TOKEN"]
+
     st.title("HuggingFace Project")
     mycontext = upload_ivieAi()
 
