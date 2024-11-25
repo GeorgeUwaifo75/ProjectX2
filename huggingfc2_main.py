@@ -63,8 +63,6 @@ def main():
     mycontext = upload_ivieAi()
     setup1()
 
-    # Load the question-answering pipeline
-    qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
     
     # Define the context related to GeeksforGeeks
     #context = f"{mycontext}"
@@ -73,11 +71,15 @@ def main():
     user_question = st.text_input("Ask a question about your documents:")
     # Ask a question
     if user_question:
-        st.write(mycontext[0:50])
-    
+        st.write(mycontext[0:100])
+
+        # Load the question-answering pipeline
+        qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
+   
         #handle_userinput(user_question)
-        result = qa_pipeline(question=user_question, context=mycontext)
+        result = qa_pipeline(question=user_question, context=mycontext[0:3000])
         st.write(f"Q: {user_question}\nA: {result['answer']}\n")
+        
 
     
 
