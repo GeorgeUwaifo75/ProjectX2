@@ -43,6 +43,11 @@ def upload_ivieAi():
     
     return text
 
+def handle_userinput(text):
+    result = qa_pipeline(question=text, context=mycontext)
+    st.write(f"Q: {text}\nA: {result['answer']}\n")
+
+
 def main():
     load_dotenv()
     HUGGINGFACEHUB_API_TOKEN= os.environ["HUGGINGFACEHUB_API_TOKEN"]
@@ -50,6 +55,12 @@ def main():
     st.title("HuggingFace Project")
     mycontext = upload_ivieAi()
     setup1()
+
+    user_question = st.text_input("Ask a question about your documents:")
+    # Ask a question
+    if user_question:
+        handle_userinput(user_question)
+    
 
 if __name__ == '__main__':
     main()
