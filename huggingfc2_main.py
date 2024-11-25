@@ -8,7 +8,8 @@ import urllib.request
 from langchain_huggingface import HuggingFaceEndpoint
 
 from dotenv import load_dotenv
-load_dotenv()
+
+mycontext=""
 HUGGINGFACEHUB_API_TOKEN= os.environ["HUGGINGFACEHUB_API_TOKEN"]
 
 
@@ -25,15 +26,17 @@ def upload_ivieAi():
     data = json.loads(json_data)
 
     # Extract the first "reply" values from each item in "allpushdata"
-    # replies = []
     text = ""
     for item in data["allpushdata"]:
         first_reply = item["replies"][0]["reply"]
-        #replies.append(first_reply)
         text += first_reply + "\n"
     
     return text
 
+def main():
+    load_dotenv()
+    st.title("HuggingFace Project")
+    mycontext = upload_ivieAi()
 
-st.title("HuggingFace Project")
-
+if __name__ == '__main__':
+    main()
