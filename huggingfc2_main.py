@@ -66,7 +66,7 @@ def main():
     user_question = st.text_input("Ask a question about your documents:")
     # Ask a question
     if user_question:
-        st.write("Q:",user_question)
+        #st.write("Q:",user_question)
         #handle_userinput(user_question)
         result = qa_pipeline(question=user_question, context=mycontext)
         st.write(f"Q: {user_question}\nA: {result['answer']}\n")
