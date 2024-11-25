@@ -60,14 +60,14 @@ def main():
     qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
     
     # Define the context related to GeeksforGeeks
-    context = f"{mycontext}"
+    #context = f"{mycontext}"
 
     
     user_question = st.text_input("Ask a question about your documents:")
     # Ask a question
     if user_question:
         #handle_userinput(user_question)
-        result = qa_pipeline(question=user_question, context=context)
+        result = qa_pipeline(question=user_question, context=mycontext)
         st.write(f"Q: {user_question}\nA: {result['answer']}\n")
 
     
