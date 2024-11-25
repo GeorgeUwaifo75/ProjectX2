@@ -78,7 +78,7 @@ def main():
         qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
    
         #handle_userinput(user_question)
-        result = qa_pipeline(question=user_question, context=mycontext[0:15000])
+        result = qa_pipeline(question=user_question, context=mycontext[0:50000])
         st.write(f"Q: {user_question}")
         st.write(f"A: {result['answer']}")
         
