@@ -54,12 +54,22 @@ def main():
 
     st.title("HuggingFace Project")
     mycontext = upload_ivieAi()
-    setup1(mycontext)
+    #setup1(mycontext)
 
+    # Load the question-answering pipeline
+    qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
+    
+    # Define the context related to GeeksforGeeks
+    context = f"{mycontext}"
+
+    
     user_question = st.text_input("Ask a question about your documents:")
     # Ask a question
     if user_question:
-        handle_userinput(user_question)
+        #handle_userinput(user_question)
+        result = qa_pipeline(question=user_question, context=context)
+        st.write(f"Q: {user_question}\nA: {result['answer']}\n")
+
     
 
 if __name__ == '__main__':
