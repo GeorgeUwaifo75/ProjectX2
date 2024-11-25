@@ -15,15 +15,11 @@ mycontext=""
 qa_pipeline = ""
 
 def setup1():
-
     # Load the question-answering pipeline
     qa_pipeline = pipeline("question-answering", model='bert-base-uncased')
     
     # Define the context related to GeeksforGeeks
     context = f"{mycontext}"
-
-
-
 
 
 
@@ -53,7 +49,7 @@ def main():
 
     st.title("HuggingFace Project")
     mycontext = upload_ivieAi()
-    def setup1()
+    setup1()
 
 if __name__ == '__main__':
     main()
