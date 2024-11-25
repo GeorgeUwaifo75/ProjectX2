@@ -10,3 +10,5 @@ HUGGINGFACEHUB_API_TOKEN= os.environ["HUGGINGFACEHUB_API_TOKEN"]
 
 st.title("HuggingFace Project")
 st.write("HF:",HUGGINGFACEHUB_API_TOKEN)
+
+llm =  HuggingFaceEndpoint(repo_id="mistralai/Mistral-Nemo-Instruct-2407")
