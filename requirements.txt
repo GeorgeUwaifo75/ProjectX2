@@ -1,4 +1,4 @@
 streamlit
-pypdf2 
 langchain
 langchain_huggingface
+python-dotenv
