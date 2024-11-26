@@ -1,4 +1,9 @@
 streamlit
+langchain
 langchain_huggingface
 python-dotenv
 transformers
+torch
+sentence-transformers
+datasets
+faiss-cpu
