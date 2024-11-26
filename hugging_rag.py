@@ -54,4 +54,10 @@ query_result = embeddings.embed_query(text)
 st.write("Result:"query_result[:3])
 
 #Create the Vector data store or set using the FAISS engine
+#Note that the following segment ran for 15 minutes and 41 seconds 
 db = FAISS.from_documents(docs, embeddings)
+
+#Asking questions
+question = "What is cheesemaking?"
+searchDocs = db.similarity_search(question)
+print(searchDocs[0].page_content)
