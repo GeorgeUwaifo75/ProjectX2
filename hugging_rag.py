@@ -53,4 +53,5 @@ text = "This is a test document."
 query_result = embeddings.embed_query(text)
 st.write("Result:"query_result[:3])
 
-
+#Create the Vector data store or set using the FAISS engine
+db = FAISS.from_documents(docs, embeddings)
