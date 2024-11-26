@@ -60,4 +60,11 @@ db = FAISS.from_documents(docs, embeddings)
 #Asking questions using the similarity search method
 question = "What is cheesemaking?"
 searchDocs = db.similarity_search(question)
-print(searchDocs[0].page_content)
+st.write(searchDocs[0].page_content)
+
+#Using a LLM for Tokenizer and Question and Answer purposes
+# Create a tokenizer object by loading the pretrained "Intel/dynamic_tinybert" tokenizer.
+tokenizer = AutoTokenizer.from_pretrained("Intel/dynamic_tinybert")
+
+# Create a question-answering model object by loading the pretrained "Intel/dynamic_tinybert" model.
+model = AutoModelForQuestionAnswering.from_pretrained("Intel/dynamic_tinybert")
