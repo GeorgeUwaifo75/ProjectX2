@@ -57,7 +57,7 @@ st.write("Result:"query_result[:3])
 #Note that the following segment ran for 15 minutes and 41 seconds 
 db = FAISS.from_documents(docs, embeddings)
 
-#Asking questions
+#Asking questions using the similarity search method
 question = "What is cheesemaking?"
 searchDocs = db.similarity_search(question)
 print(searchDocs[0].page_content)
