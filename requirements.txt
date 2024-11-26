@@ -1,5 +1,6 @@
 streamlit
 langchain
+langchain_community
 langchain_huggingface
 python-dotenv
 transformers
