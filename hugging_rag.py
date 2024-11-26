@@ -18,7 +18,7 @@ loader = HuggingFaceDatasetLoader(dataset_name, page_content_column)
 data = loader.load()
 
 # Display the first 15 entries
-data[:2]
+#data[:2]
 
 # Create an instance of the RecursiveCharacterTextSplitter class with specific parameters.
 # It splits text into chunks of 1000 characters each with a 150-character overlap.
