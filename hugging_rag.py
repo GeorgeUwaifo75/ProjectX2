@@ -26,3 +26,5 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=15
 
 # 'data' holds the text you want to split, split the text into documents using the text splitter.
 docs = text_splitter.split_documents(data)
+
+#docs[0]
