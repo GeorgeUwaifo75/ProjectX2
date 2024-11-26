@@ -84,6 +84,18 @@ llm = HuggingFacePipeline(
     model_kwargs={"temperature": 0.7, "max_length": 512},
 )
 
-# Create a retriever object from the 'db' using the 'as_retriever' method.
+# Create a retriever object from the 'db' using the 'as_retriever' method 1.
 # This retriever is likely used for retrieving data or documents from the database.
-retriever = db.as_retriever()
+#retriever = db.as_retriever()
+
+#docs = retriever.invoke("What is Cheesemaking?")
+#st.write(docs[0].page_content)
+
+
+#The RetrievalQA chain, which combines question-answering with a retrieval step. Method 2 
+# Create a retriever object from the 'db' with a search configuration where it retrieves up to 4 relevant splits/documents.
+retriever = db.as_retriever(search_kwargs={"k": 4})
+
+# Create a question-answering instance (qa) using the RetrievalQA class.
+# It's configured with a language model (llm), a chain type "refine," the retriever we created, and an option to not return source documents.
+qa = RetrievalQA.from_chain_type(llm=llm, chain_type="refine", retriever=retriever, return_source_documents=False)
