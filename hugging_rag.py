@@ -51,7 +51,7 @@ embeddings = HuggingFaceEmbeddings(
 #Testing the embeddings
 text = "This is a test document."
 query_result = embeddings.embed_query(text)
-st.write("Result:",query_result[:3])
+#st.write("Result:",query_result[:3])
 
 #Create the Vector data store or set using the FAISS engine
 #Note that the following segment ran for 15 minutes and 41 seconds 
