@@ -83,3 +83,7 @@ llm = HuggingFacePipeline(
     pipeline=question_answerer,
     model_kwargs={"temperature": 0.7, "max_length": 512},
 )
+
+# Create a retriever object from the 'db' using the 'as_retriever' method.
+# This retriever is likely used for retrieving data or documents from the database.
+retriever = db.as_retriever()
