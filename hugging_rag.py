@@ -47,3 +47,10 @@ embeddings = HuggingFaceEmbeddings(
     model_kwargs=model_kwargs, # Pass the model configuration options
     encode_kwargs=encode_kwargs # Pass the encoding options
 )
+
+#Testing the embeddings
+text = "This is a test document."
+query_result = embeddings.embed_query(text)
+st.write("Result:"query_result[:3])
+
+
