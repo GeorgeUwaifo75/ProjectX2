@@ -1,5 +1,6 @@
 import streamlit as st
-import dotenv
+from dotenv import load_dotenv
+
 from peft import AutoPeftModelForCausalLM
 from transformers import AutoTokenizer
 
