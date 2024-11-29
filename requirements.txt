@@ -4,9 +4,8 @@ langchain_community
 langchain_huggingface
 python-dotenv
 transformers
+peft
 torch
 sentence-transformers
 datasets
 faiss-cpu
-peft
-PyTorch
