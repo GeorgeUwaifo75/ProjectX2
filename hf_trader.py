@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from dotenv import load_dotenv
 
 from peft import AutoPeftModelForCausalLM
@@ -8,7 +9,7 @@ from huggingface_hub import login
 
 load_dotenv()
 
-#login("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")
+login("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")
 
 st.write("The Predictor")
 
