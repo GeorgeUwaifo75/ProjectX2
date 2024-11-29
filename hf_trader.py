@@ -8,7 +8,7 @@ from huggingface_hub import login
 
 load_dotenv()
 
-login("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")
+#login("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")
 
 st.write("The Predictor")
 
