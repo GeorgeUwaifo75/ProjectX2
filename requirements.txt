@@ -8,3 +8,5 @@ torch
 sentence-transformers
 datasets
 faiss-cpu
+PEFT
+PyTorch
