@@ -8,5 +8,5 @@ torch
 sentence-transformers
 datasets
 faiss-cpu
-PEFT
+peft
 PyTorch
