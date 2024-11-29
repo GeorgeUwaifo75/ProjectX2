@@ -1,8 +1,12 @@
 import streamlit as st
+import dotenv
 from peft import AutoPeftModelForCausalLM
 from transformers import AutoTokenizer
 
 from huggingface_hub import login
+
+load_dotenv()
+
 login("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")
 
 st.write("The Predictor")
